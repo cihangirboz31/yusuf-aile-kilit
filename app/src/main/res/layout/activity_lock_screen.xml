@@ -81,7 +81,7 @@
             android:background="@drawable/input_bg"
             android:gravity="center"
             android:hint="PIN girin"
-            android:hintTextColor="@color/text_hint"
+            android:textColorHint="@color/text_hint"
             android:inputType="numberPassword"
             android:textColor="@color/text_primary"
             android:textSize="24sp"
