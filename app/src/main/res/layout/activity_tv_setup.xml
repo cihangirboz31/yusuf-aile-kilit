@@ -69,7 +69,7 @@
                     android:textSize="13sp" android:layout_marginBottom="12dp"/>
                 <EditText android:id="@+id/ipInput" android:layout_width="match_parent"
                     android:layout_height="48dp" android:hint="TV IP adresi (örn: 192.168.1.10)"
-                    android:hintTextColor="@color/text_hint" android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint" android:textColor="@color/text_primary"
                     android:inputType="text" android:background="@drawable/input_bg"
                     android:paddingHorizontal="12dp" android:layout_marginBottom="8dp"/>
                 <Button android:id="@+id/btnConnect" android:layout_width="match_parent"
