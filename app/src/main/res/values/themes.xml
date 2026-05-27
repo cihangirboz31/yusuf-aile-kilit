@@ -22,8 +22,6 @@
 
     <style name="Theme.YusufAileKilit.Lock" parent="Theme.YusufAileKilit">
         <item name="android:windowBackground">@color/bg_dark</item>
-        <item name="android:windowShowWhenLocked">true</item>
-        <item name="android:windowTurnScreenOn">true</item>
     </style>
 
     <style name="NumpadButton" parent="Widget.MaterialComponents.Button">
