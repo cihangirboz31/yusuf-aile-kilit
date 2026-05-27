@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Yusuf Aile Kilit</string>
+    <string name="accessibility_service_label">Yusuf Aile Kilit - Uygulama İzleme</string>
+    <string name="accessibility_service_description">YouTube ve YouTube Kids kullanımını izleyerek süre sınırı aşıldığında kilitleme yapar.</string>
+    <string name="device_admin_description">Uygulamanın kaldırılmasını zorlaştırmak ve ebeveyn kontrolünü güçlendirmek için gereklidir.</string>
+    <string name="lock_message">YouTube süren bitti.\nDevam etmek için ebeveyn PIN\'i gerekli.</string>
+</resources>

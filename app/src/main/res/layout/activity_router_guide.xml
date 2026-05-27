@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="24dp">
+            <Button android:id="@+id/backButton" android:layout_width="40dp" android:layout_height="40dp"
+                android:text="←" android:backgroundTint="@color/card_bg" android:padding="0dp"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="🛡️ En Güçlü Koruma" android:textColor="@color/text_primary" android:textSize="22sp"
+                android:textStyle="bold" android:layout_marginStart="12dp"/>
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/card_bg" app:cardCornerRadius="12dp" android:layout_marginBottom="12dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="🌐 Modem/Router Üzerinden YouTube Engelleme"
+                    android:textColor="@color/accent_blue" android:textSize="16sp" android:textStyle="bold"
+                    android:layout_marginBottom="12dp"/>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:textColor="@color/text_secondary" android:textSize="14sp" android:lineSpacingExtra="4dp"
+                    android:text="Bu yöntem, hem telefon hem TV hem de evdeki TÜM cihazlarda YouTube'u engeller. En güçlü yöntemdir.\n\nAdım 1: Tarayıcıya 192.168.1.1 yazın (modem arayüzü)\n\nAdım 2: Admin kullanıcı adı/şifre ile giriş yapın\n(Genellikle: admin/admin veya modeminizin altındaki etiket)\n\nAdım 3: 'URL Filtre', 'Ebeveyn Kontrolü' veya 'Site Engelleme' bölümüne gidin\n\nAdım 4: Şu adresleri kara listeye ekleyin:\n• youtube.com\n• www.youtube.com\n• youtu.be\n• yt.be\n• youtube-nocookie.com\n• googlevideo.com\n\nAdım 5: Kaydet ve modemin yeniden başlamasını bekleyin\n\n⚠️ Not: Bu işlem sırasında ebeveyn kendi cihazını engellememeye dikkat etsin. Engeli kaldırmak için aynı adımları izleyin."/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/card_bg" app:cardCornerRadius="12dp" android:layout_marginBottom="12dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="📺 TV Ebeveyn Kilidi Rehberi"
+                    android:textColor="@color/accent_purple" android:textSize="16sp" android:textStyle="bold"
+                    android:layout_marginBottom="12dp"/>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:textColor="@color/text_secondary" android:textSize="14sp" android:lineSpacingExtra="4dp"
+                    android:text="Arçelik TV:\n1. TV Ayarlar → Genel → Ebeveyn Denetimi\n2. PIN oluşturun\n3. YouTube uygulamasını kilitleyin\n\nTurkcell TV+:\n1. Ana Menü → Ayarlar → Ebeveyn Kilidi\n2. Şifre belirleyin\n3. Kanal/uygulama kilidi uygulayın\n\nAndroid TV (Genel):\n1. Ayarlar → Cihaz Tercihleri → Güvenlik\n2. Bilinmeyen kaynaklar kapalı\n3. Google Play Ebeveyn Denetimi'ni aktifleştirin"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/card_bg" app:cardCornerRadius="12dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="👶 YouTube Kids Profili Kurulumu"
+                    android:textColor="@color/accent_green" android:textSize="16sp" android:textStyle="bold"
+                    android:layout_marginBottom="12dp"/>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:textColor="@color/text_secondary" android:textSize="14sp" android:lineSpacingExtra="4dp"
+                    android:text="1. YouTube Kids uygulamasını indirin\n2. Ebeveyn olarak giriş yapın\n3. Çocuk yaşına uygun içerik filtresi seçin\n4. İzin verilen içerikleri belirleyin\n5. Günlük izleme süresi sınırı koyun (uygulama içi)\n6. Gece modu aktifleştirin\n\nYouTube Kids, normal YouTube'dan çok daha güvenlidir ve bu uygulama ile birlikte kullanıldığında çift katmanlı koruma sağlar."/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

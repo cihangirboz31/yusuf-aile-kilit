@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- İzinler -->
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" tools:ignore="ProtectedPermissions"
+        xmlns:tools="http://schemas.android.com/tools"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+    <uses-permission android:name="android.permission.BIND_DEVICE_ADMIN"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.YusufAileKilit"
+        android:supportsRtl="true">
+
+        <!-- Splash (başlangıç) Activity -->
+        <activity
+            android:name=".activity.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.YusufAileKilit.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- PIN Kurulum Activity -->
+        <activity
+            android:name=".activity.SetupPinActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <!-- PIN Giriş Activity -->
+        <activity
+            android:name=".activity.PinActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <!-- Ana Panel Activity -->
+        <activity
+            android:name=".activity.DashboardActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <!-- Kilit Ekranı Activity -->
+        <activity
+            android:name=".activity.LockScreenActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.YusufAileKilit.Lock"/>
+
+        <!-- Ayarlar Activity -->
+        <activity
+            android:name=".activity.SettingsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <!-- TV Kurulum Activity -->
+        <activity
+            android:name=".activity.TvSetupActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <!-- Ödül Activity -->
+        <activity
+            android:name=".activity.RewardActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <!-- Router Rehber Activity -->
+        <activity
+            android:name=".activity.RouterGuideActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <!-- İzin Kontrol Activity -->
+        <activity
+            android:name=".activity.PermissionsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <!-- Monitor Foreground Service -->
+        <service
+            android:name=".service.MonitorService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse"
+            android:permission="android.permission.FOREGROUND_SERVICE">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="monitorUsage"/>
+        </service>
+
+        <!-- Accessibility Service -->
+        <service
+            android:name=".service.AppMonitorAccessibilityService"
+            android:exported="true"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:label="@string/accessibility_service_label">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config"/>
+        </service>
+
+        <!-- Boot Receiver -->
+        <receiver
+            android:name=".service.BootReceiver"
+            android:exported="true">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- Device Admin Receiver -->
+        <receiver
+            android:name=".admin.DeviceAdminReceiver"
+            android:exported="true"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin"/>
+        </receiver>
+
+    </application>
+
+</manifest>

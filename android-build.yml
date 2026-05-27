@@ -1,0 +1,51 @@
+name: Android APK Build
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repoyu indir
+        uses: actions/checkout@v4
+
+      - name: Java 17 kur
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Gradle cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Gradle Wrapper izinleri ver
+        run: chmod +x gradlew
+
+      - name: Debug APK build et
+        run: ./gradlew assembleDebug --no-daemon --stacktrace
+
+      - name: APK artifact olarak yükle
+        uses: actions/upload-artifact@v4
+        with:
+          name: YusufAileKilit-debug-APK
+          path: app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 30
+
+      - name: APK boyutunu göster
+        run: |
+          echo "=== APK Bilgisi ==="
+          ls -lh app/build/outputs/apk/debug/app-debug.apk
+          echo "APK başarıyla oluşturuldu!"

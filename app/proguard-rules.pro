@@ -1,0 +1,5 @@
+-keep class com.yusuf.ailekilit.** { *; }
+-keep class com.yusuf.ailekilit.admin.** { *; }
+-keep class com.yusuf.ailekilit.service.** { *; }
+-keepattributes *Annotation*
+-keepattributes SourceFile,LineNumberTable
